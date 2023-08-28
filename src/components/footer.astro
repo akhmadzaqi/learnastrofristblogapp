@@ -1,12 +1,22 @@
 ---
 ---
-
-<div class="flex justify-center  h-screen">
-  <footer>
-    <small class="text-lg">
-      Copyright &copy; <span id="copyright"></span> | All rights reserved
-    </small>
-  </footer>
+<div class="bg-blue-950">
+  <div class="container bg-blue-950 mx-auto">
+    <div class="grid grid-cols-1 text-center text-teal-50 text-lg">
+      <h1>Let's reach out.🤝</h1>
+      <footer>
+        <small>
+          Copyright &copy; <span id="copyright"></span> | All rights reserved
+        </small>
+      </footer>
+    </div>
+  </div>
 </div>
+
+<script>
+  document.querySelector("#copyright").textContent = new Date()
+    .getFullYear()
+    .toString();
+</script>
 
   
