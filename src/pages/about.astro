@@ -4,15 +4,15 @@ import MainLayout from "../layouts/Layout.astro";
 ---
 
 <MainLayout title="My Blog">
-  <div class="container text-blue-950">
+  <div class="container text-blue-950 mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 m-5">
-      <div class="mb-4 md:col-span-2">
-        <h1 class="font-figtree font-bold text-3xl col-span-2 pb-2 flex">About<span class="animate-waving-hand pl-2">👋🏻</span></h1>
+      <div class="mb-4 md:col-span-2 md:flex md:justify-center">
+        <h1 class="font-figtree font-bold text-3xl md:text-5xl pb-2 flex ">About<span class="animate-waving-hand pl-2">👋🏻</span></h1>
       </div>
-      <div class="flex justify-center pb-2">
+      <div class="flex justify-center pb-2 md:-translate-x-5 lg:translate-x-4">
         <img src="/images/about.png" alt="" width="200">
       </div>
-      <div class="m-2">
+      <div class="m-2 lg:-translate-x-14 lg:translate-y-4 md:pl-2">
         <h1 class="text-2xl pb-2 font-figtree font-semibold">Hello, I'm Akhmad Zaqi R.</h1>
         <p class="text-justify">I'm a passionate Front-End Developer and Graphic Designer. I love creating beautiful and responsive websites that provide a great user experience. My journey in the world of web development and design has been amazing, and I'm always eager to learn and improve my skills.</p>
       </div>
