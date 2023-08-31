@@ -3,13 +3,12 @@
 import navData from "../data/navdata";
 import { Icon } from 'astro-icon';
 ---
-
-<nav>
-    <div class="flex items-center rounded-b-3xl shadow-xl bg-white bg-opacity-90 backdrop-blur-2xl font-figtree font-semibold text-blue-950 mx-auto">
-        <a href="/" class="ml-2">
+<nav class="container mx-auto">
+    <div class="flex items-center rounded-3xl shadow-lg bg-white bg-opacity-90 font-figtree font-semibold text-blue-950 mx-auto m-3 border-2 border-t-blue-100">
+        <a href="/" class="ml-4">
             <Icon class="m-2" name="logomarks" width="40" />
         </a>
-        <ul class="flex ml-auto">
+        <ul class="flex ml-auto mr-10">
             {
                 navData.map((item) => (
                     <a class="p-5 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110" href={item.path}>{item.nama}</a>

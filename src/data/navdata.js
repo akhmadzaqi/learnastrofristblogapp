@@ -4,6 +4,10 @@ const navData = [
         path: "/about"
     },
     {
+        nama: "Skills",
+        path: "/skills"
+    },
+    {
         nama: "✨Blog",
         path: "/blog"
     }

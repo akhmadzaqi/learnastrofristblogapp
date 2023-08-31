@@ -7,6 +7,15 @@ module.exports = {
 				figtree: ['Figtree', 'sans-serif'],
 			  },
 			  keyframes: {
+				wiggleVertical: {
+				  '0%, 100%': { transform: 'translateY(-2px)' },
+				  '50%': { transform: 'translateY(4px)' },
+				},
+			  },
+			  animation: {
+				wiggleVertical: 'wiggleVertical 2s ease-in-out infinite',
+			  },
+			  keyframes: {
 				wave: {
 				  '0%': { transform: 'rotate(0.0deg)' },
 				  '10%': { transform: 'rotate(14deg)' },
@@ -21,8 +30,7 @@ module.exports = {
 			  animation: {
 				'waving-hand': 'wave 2s linear infinite',
 			  },
-			  
-		},
+			},
 	},
 	plugins: [],
 }
