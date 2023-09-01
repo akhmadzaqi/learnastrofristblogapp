@@ -9,22 +9,31 @@ const { category, title, author, date, image } = Astro.props;
 ---
 
 <header>
-    <div class="container">
-      <small>
-        <a href={`/category/${slugify(category)}`}>{category}</a>
-      </small>
-      <h1>{title}</h1>
-      <p>by <a href={`/author/${slugify(author)}`}>{author}</a> : {formatDate(date)}</p>
+  <div class="container mx-auto font-figtree text-blue-950">
+    <div class="grid grid-cols-1">
+      <div class="flex justify-center mt-4 p-2"><small class=" bg-blue-950 p-1 rounded-lg">
+        <a class="text-white" href={`/category/${slugify(category)}`}>{category}</a>
+      </small></div>
+      <div class="pb-2">
+        <h1 class="text-3xl text-center font-bold text-blue-950">{title}</h1>
+        <p class="text-center font-light p-1">
+          By <a class="underline underline-offset-2" href={`/author/${slugify(author)}`}>{author}</a> : {
+            formatDate(date)}
+        </p>
+      </div>
+      <div class="scale-90">
+        <Image class=""
+        src={image.src}
+        alt={image.alt}
+        width={1200}
+        height={600}
+        format="avif"
+        fit="cover"
+        quality={80}
+        aspectRatio={5 / 3}
+        class="rounded-xl"
+      />
+      </div>
     </div>
-    <Image 
-    src={image.src} 
-    alt={image.alt}
-    width={1200}
-    height={600}
-    format="avif"
-    fit="cover"
-    quality={80}
-    aspectRatio={5/3}
-    class="" 
-    />
-  </header>
+  </div>
+</header>

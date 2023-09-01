@@ -1,0 +1,52 @@
+---
+// library imports
+import { Image } from "@astrojs/image/components";
+
+// utils imports
+import { slugify, formatDate } from "../js/utils";
+
+
+const { frontmatter, url, tagType } = Astro.props;
+
+const Tag = tagType;
+
+const { title, date, author, image, description, category } = frontmatter;
+---
+
+    <article class="font-figtree text-blue-950 text-center shadow-xl rounded-2xl m-8">
+        <div class="grid grid-cols-1">
+            <div class="text-center bg-blue-950 rounded-t-2xl mb-4 p-2"><a class="text-white" href={`/category/${slugify(category)}`}>{category}</a></div>
+            <a class="flex justify-center" href={url}>
+                <div class="relative overflow-hidden rounded-xl">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={400}
+                    height={250}
+                    format="webp"
+                    fit="cover"
+                    quality={80}
+                    aspectRatio={4/1}
+                    class="rounded-md hover:scale-125 transform transition-transform duration-300 hover:z-10"
+                  />
+                </div>
+              </a>
+              
+          <div>
+            <Tag class="mt-2">
+                <a class="" href={url}>{title}</a>
+            </Tag>
+          </div>
+          <div class="pb-2">
+            <h1 class="text-3xl text-center font-bold text-blue-950 px-4">{title}</h1>
+            <p class="text-center font-light p-1">
+              By <a class="underline underline-offset-2" href={`/author/${slugify(author)}`}>{author}</a> : {
+                formatDate(date)}
+            </p>
+          </div>
+          <p class="px-6">{description}</p>
+          <div class="my-6 pb-2"><a class="bg-blue-950 text-white py-2 px-6 rounded" href={url}>Read post</a></div>
+        </div>
+    </article>
+
+    
