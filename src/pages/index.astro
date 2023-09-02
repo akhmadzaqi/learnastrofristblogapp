@@ -2,6 +2,14 @@
 // component imports
 import MainLayout from "../layouts/MainLayout.astro";
 import About from "../components/about.astro";
+import PostCard from "../components/PostCard.astro";
+
+import { formatBlogPosts } from "../js/utils";
+const allPosts = await Astro.glob("./**/*.md");
+const formattedPosts = formatBlogPosts(allPosts, {
+  limit: 3,
+});
+
 ---
 
 <MainLayout title="My Blog">
@@ -33,4 +41,19 @@ import About from "../components/about.astro";
     </div>
   </div>
   <About/>
+  <hr></hr>
+  <section class="container mx-auto mt-10">
+    <h1 class="text-4xl font-bold underline  p-4 text-blue-950">New Blog Posts 📠</h1>
+    <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
+      {
+        formattedPosts.map((post) => (
+          <PostCard
+            frontmatter={post.frontmatter}
+            url={post.url}
+            tagType="h2"
+          />
+        ))
+      }
+    </div>
+  </section>
 </MainLayout>
